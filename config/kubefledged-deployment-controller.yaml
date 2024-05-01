@@ -37,5 +37,7 @@ spec:
         - name: BUSYBOX_IMAGE
           value: "us-central1-docker.pkg.dev/cloud-alchemists-sandbox/kube-fledged-test/busybox:1.35.0"
       serviceAccountName: kubefledged-controller
+      dnsPolicy: ClusterFirst
+      enableServiceLinks: true
       imagePullSecrets:
       - name: artifact-registry

@@ -62,6 +62,8 @@ spec:
       - name: certkey-volume
         emptyDir: {}
       serviceAccountName: kubefledged-webhook-server
+      dnsPolicy: ClusterFirst
+      enableServiceLinks: true
       imagePullSecrets:
       - name: artifact-registry
 
