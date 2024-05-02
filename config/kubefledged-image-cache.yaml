@@ -1,0 +1,18 @@
+apiVersion: kubefledged.io/v1alpha2
+kind: ImageCache
+metadata:
+  name: gdc-local-cache
+  namespace: kube-fledged
+  labels:
+    app: kubefledged
+    component: imagecache
+spec:
+  cacheSpec:
+  - images:
+    - us-central1-docker.pkg.dev/cloud-alchemists-sandbox/kube-fledged-test/kubefledged-webhook-server:latest
+    - us-central1-docker.pkg.dev/cloud-alchemists-sandbox/kube-fledged-test/kubefledged-controller:latest
+    - us-central1-docker.pkg.dev/cloud-alchemists-sandbox/kube-fledged-test/kubefledged-cri-client:latest
+    - us-central1-docker.pkg.dev/cloud-alchemists-sandbox/kube-fledged-test/kubefledged-operator:latest
+    - us-central1-docker.pkg.dev/cloud-alchemists-sandbox/kube-fledged-test/busybox:1.35.0
+  imagePullSecrets:
+  - name: image-pull-secret
