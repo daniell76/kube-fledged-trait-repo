@@ -18,7 +18,7 @@ spec:
         app: kubefledged
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/cloud-alchemists-sandbox/kube-fledged-test/kubefledged-controller:latest
+      - image: gcr.io/cloud-alchemists-sandbox/kube-fledged/kubefledged-controller:latest
         command: ["/opt/bin/kubefledged-controller"]
         args:
         - "--stderrthreshold=INFO"
@@ -33,9 +33,9 @@ spec:
             fieldRef:
               fieldPath: metadata.namespace
         - name: KUBEFLEDGED_CRI_CLIENT_IMAGE
-          value: "us-central1-docker.pkg.dev/cloud-alchemists-sandbox/kube-fledged-test/kubefledged-cri-client:latest"
+          value: "gcr.io/cloud-alchemists-sandbox/kube-fledged/kubefledged-cri-client:latest"
         - name: BUSYBOX_IMAGE
-          value: "us-central1-docker.pkg.dev/cloud-alchemists-sandbox/kube-fledged-test/busybox:1.35.0"
+          value: "gcr.io/cloud-alchemists-sandbox/kube-fledged/busybox:1.35.0"
       serviceAccountName: kubefledged-controller
-      imagePullSecrets:
-      - name: image-pull-secret
+      # imagePullSecrets:
+      # - name: image-pull-secret

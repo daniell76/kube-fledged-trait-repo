@@ -18,7 +18,7 @@ spec:
         app: kubefledged
     spec:
       initContainers:
-      - image: us-central1-docker.pkg.dev/cloud-alchemists-sandbox/kube-fledged-test/kubefledged-webhook-server:latest
+      - image: gcr.io/cloud-alchemists-sandbox/kube-fledged/kubefledged-webhook-server:latest
         command: ["/opt/bin/kubefledged-webhook-server"]
         args:
         - "--stderrthreshold=INFO"
@@ -40,7 +40,7 @@ spec:
         - name: certkey-volume
           mountPath: "/var/run/secrets/webhook-server"
       containers:
-      - image: us-central1-docker.pkg.dev/cloud-alchemists-sandbox/kube-fledged-test/kubefledged-webhook-server:latest
+      - image: gcr.io/cloud-alchemists-sandbox/kube-fledged/kubefledged-webhook-server:latest
         command: ["/opt/bin/kubefledged-webhook-server"]
         args:
         - "--stderrthreshold=INFO"
@@ -62,6 +62,6 @@ spec:
       - name: certkey-volume
         emptyDir: {}
       serviceAccountName: kubefledged-webhook-server
-      imagePullSecrets:
-      - name: image-pull-secret
+      # imagePullSecrets:
+      # - name: image-pull-secret
 

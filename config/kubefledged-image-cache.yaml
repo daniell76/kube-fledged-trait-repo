@@ -9,10 +9,10 @@ metadata:
 spec:
   cacheSpec:
   - images:
-    - us-central1-docker.pkg.dev/cloud-alchemists-sandbox/kube-fledged-test/kubefledged-webhook-server:latest
-    - us-central1-docker.pkg.dev/cloud-alchemists-sandbox/kube-fledged-test/kubefledged-controller:latest
-    - us-central1-docker.pkg.dev/cloud-alchemists-sandbox/kube-fledged-test/kubefledged-cri-client:latest
-    - us-central1-docker.pkg.dev/cloud-alchemists-sandbox/kube-fledged-test/kubefledged-operator:latest
-    - us-central1-docker.pkg.dev/cloud-alchemists-sandbox/kube-fledged-test/busybox:1.35.0
-  imagePullSecrets:
-  - name: image-pull-secret
+    - gcr.io/cloud-alchemists-sandbox/kube-fledged/kubefledged-webhook-server:latest
+    - gcr.io/cloud-alchemists-sandbox/kube-fledged/kubefledged-controller:latest
+    - gcr.io/cloud-alchemists-sandbox/kube-fledged/kubefledged-cri-client:latest
+    - gcr.io/cloud-alchemists-sandbox/kube-fledged/kubefledged-operator:latest
+    - gcr.io/cloud-alchemists-sandbox/kube-fledged/busybox:1.35.0
+  # imagePullSecrets:
+  # - name: image-pull-secret
